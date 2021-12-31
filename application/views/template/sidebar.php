@@ -68,13 +68,13 @@
 		</div>
 	</li> 
 	<li class="nav-item">
-		<a class="nav-link" href="<?= base_url('Customer')?>">
+		<a class="nav-link" href="<?= base_url('Kendaraan')?>">
 		<i class="fas fa-fw fa-palette"></i>
 		<span>Kendaraan</span>
 		</a>
 	</li>
 	<li class="nav-item">
-		<a class="nav-link" href="<?= base_url('Customer')?>">
+		<a class="nav-link" href="<?= base_url('Kamera')?>">
 		<i class="fas fa-fw fa-palette"></i>
 		<span>Kamera</span>
 		</a>

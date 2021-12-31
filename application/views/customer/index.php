@@ -101,7 +101,7 @@
 		</div>
 	</div>
 </div>
-<?php $this->load->view('customer/add');?>
+<?php $this->load->view('customer/edit');?>
 <script>
 	$(document).on("click", ".btn_edit", function () {
 		var id = $(this).data('id')

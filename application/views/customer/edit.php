@@ -11,7 +11,7 @@
 			</div>
 			<form action="<?= base_url('Customer/ubah')?>" method="post">
 				<div class="modal-body">
-					<input type="text" name="id" id="id" value="">
+					<input type="hidden" name="id" id="id" value="">
 					<div class="form-group row">
 						<label for="nama" class="col-sm-3 col-form-label">Nama Lengkap</label>
 						<div class="col-sm-9">
