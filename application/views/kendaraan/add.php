@@ -1,5 +1,5 @@
 <!-- Modal Logout -->
-<div class="modal fade" id="edit" tabindex="-1" role="dialog" aria-labelledby="modalLabel"
+<div class="modal fade" id="add" tabindex="-1" role="dialog" aria-labelledby="modalLabel"
 	aria-hidden="true">
 	<div class="modal-dialog" role="document">
 		<div class="modal-content">
@@ -9,9 +9,8 @@
 				<span aria-hidden="true">&times;</span>
 			</button>
 			</div>
-			<form action="<?= base_url('Kendaraan/ubah')?>" method="post">
+			<form action="<?= base_url('Kendaraan/save')?>" method="post">
 				<div class="modal-body">
-					<input type="hidden" name="id" id="id" value="">
 					<div class="form-group row">
 						<label for="desc" class="col-sm-3 col-form-label">Deskripsi</label>
 						<div class="col-sm-9">
