@@ -52,6 +52,25 @@
 			if($(this).prop('checked')) {
 				$(".show-member").show()
 				$(".show-non-member").hide()
+				$("#no_identitas").prop('readonly', true)
+				$("#select-customer").on('change', function() {
+					var id = $(this).val()
+					if (id) {
+						$.ajax({
+							url : "<?= base_url('Rental/find_by_id/')?>" + id, 
+							method : "post", 
+							success : function (e) {
+								var obj = JSON.parse(e)
+								$("#no_identitas").val(obj.no_identitas)
+								$("#no_identitas").prop('readonly', true)
+
+							}
+						})
+					} else {
+						$("#no_identitas").val('')
+					}
+				})
+
 			} else {
 				$(".show-non-member").show()
 				$("#no_identitas").val('')
@@ -60,21 +79,41 @@
 			}
 		});
 
-		$("#select-customer").on('change', function() {
-			var id = $(this).val()
-			if (id) {
-				$.ajax({
-					url : "<?= base_url('Rental/find_by_id/')?>" + id, 
-					method : "post", 
-					success : function (e) {
-						var obj = JSON.parse(e)
-						$("#no_identitas").val(obj.no_identitas)
-						$("#no_identitas").prop('readonly', true)
+		// $("#select-customer").on('change', function() {
+		// 	var id = $(this).val()
+		// 	if (id) {
+		// 		$.ajax({
+		// 			url : "<?= base_url('Rental/find_by_id/')?>" + id, 
+		// 			method : "post", 
+		// 			success : function (e) {
+		// 				var obj = JSON.parse(e)
+		// 				$("#no_identitas").val(obj.no_identitas)
+		// 				$("#no_identitas").prop('readonly', true)
 
+		// 			}
+		// 		})
+		// 	}
+		// })
+
+		$("#jenis_sewa").on('change', function() {
+			var jenis = $(this).val()
+			// alert(jenis)
+			if (jenis) {
+				$.ajax({
+					url: "<?= base_url('Rental/find_jenis/')?>"+jenis, 
+					method: "post", 
+					data: {
+						jenis : jenis
+					},
+					success:function(e) {
+						$("#rental").html(e)
 					}
 				})
 			}
 		})
+
+		var val_data = $("#rental").val()
+		alert(val_data)
 		
 	})
 </script>

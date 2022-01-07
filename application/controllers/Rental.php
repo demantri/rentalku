@@ -15,5 +15,12 @@
 		$data = $this->Member_model->data_member($id)->row();
 		echo json_encode($data);
 	}
+
+	public function find_jenis()
+	{
+		if ($this->input->post('jenis')) {
+			echo $this->Rental_model->get_rental($this->input->post('jenis'));
+		}
+	}
 }
 ?>

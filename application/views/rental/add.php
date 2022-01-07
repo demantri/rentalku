@@ -12,9 +12,9 @@
 					<div class="row">
 						<div class="col-sm-6">
 							<div class="form-group row">
-								<label for="no_polisi" class="col-sm-5 col-form-label">No. Sewa</label>
+								<label for="no_sewa" class="col-sm-5 col-form-label">No. Sewa</label>
 								<div class="col-sm-7">
-								<input type="text" name="no_polisi" class="form-control" id="no_polisi" placeholder="No. Polisi" required>
+								<input type="text" name="no_sewa" class="form-control" id="no_sewa" placeholder="No. Polisi" required>
 								</div>
 							</div>
 							<div class="form-group row">
@@ -55,6 +55,35 @@
 								</div>
 							</div>
 							<hr>
+						</div>
+						<!-- kanan -->
+						<div class="col-sm-6">
+							<div class="form-group row">
+								<label for="jenis_sewa" class="col-sm-5 col-form-label">Jenis Sewa</label>
+								<div class="col-sm-7">
+									<select name="jenis_sewa" id="jenis_sewa" class="form-control">
+										<option value="">-</option>
+										<option value="kamera">Kamera</option>
+										<option value="kendaraan">Kendaraan</option>
+									</select>
+								</div>
+							</div>
+							<div class="detail">
+							<div class="form-group row">
+								<label for="rental" class="col-sm-5 col-form-label">Data Rental</label>
+								<div class="col-sm-7">
+									<select name="rental" id="rental" class="form-control">
+										
+									</select>
+								</div>
+							</div>
+							<div class="form-group row">
+								<label for="rental" class="col-sm-5 col-form-label">Sewa Harian</label>
+								<div class="col-sm-7">
+									<input type="text" name="sewa_harian" id="sewa_harian" class="form-control" readonly>
+								</div>
+							</div>
+							</div>
 						</div>
 					</div>
 				</div>
