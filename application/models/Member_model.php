@@ -7,7 +7,7 @@
 		// 	$sql .= " WHERE a.id = $id ";
 		// }
 
-		$sql = "SELECT a.*, member_id, poin, c.keterangan 
+		$sql = "SELECT a.*, b.id_detail as member_id, poin, c.keterangan 
 		from customer a
 		join detail_member b on a.id = b.id_customer
 		join member c on c.id = b.id_detail

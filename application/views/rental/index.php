@@ -17,17 +17,28 @@
 			<div class="table-responsive p-3">
 			<table class="table align-items-center table-flush" id="table">
 				<thead class="thead-light">
-				<tr>
-					<th>#</th>
-					<th>No. Sewa</th>
-					<th>Tanggal</th>
-					<th>Keterangan</th>
-					<th>Nama Customer</th>
-					<th>Action</th>
-				</tr>
+					<tr>
+						<th>#</th>
+						<th>No. Sewa</th>
+						<th>Tanggal</th>
+						<th>Keterangan</th>
+						<th>Nama Customer</th>
+						<th>Action</th>
+					</tr>
 				</thead>
 				<tbody>
-
+					<?php 
+					$no = 1;
+					foreach ($list as $key => $value) { ?>
+						<tr>
+							<tr><?= $no++ ?></tr>
+							<tr></tr>
+							<tr></tr>
+							<tr></tr>
+							<tr></tr>
+							<tr></tr>
+						</tr>
+					<?php }?>
 				</tbody>
 			</table>
 			</div>
@@ -109,11 +120,35 @@
 						$("#rental").html(e)
 					}
 				})
+			} else {
+				$("#sewa_harian").val(0)
+			}
+		})
+
+		$("#rental").on('change', function() {
+			var id = $(this).val()
+			var jenis = $("#jenis_sewa").val()
+			// alert(jenis)
+			if (id) {
+				$.ajax({
+					url: "<?= base_url('Rental/find_data/')?>"+id+"/"+jenis, 
+					method: "post", 
+					data: {
+						id : id,
+						jenis : jenis,
+					},
+					success:function(e) {
+						var obj = JSON.parse(e)
+						$("#sewa_harian").val(obj.sewa_harian)
+					}
+				})
+			} else {
+				$("#sewa_harian").val(0)
 			}
 		})
 
 		var val_data = $("#rental").val()
-		alert(val_data)
+		// alert(val_data)
 		
 	})
 </script>

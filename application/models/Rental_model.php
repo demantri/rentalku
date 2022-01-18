@@ -18,5 +18,21 @@
 		return $output;
 		
 	}
+
+	public function get_data($id, $jenis)
+	{
+		if ($jenis == 'kamera') {
+			$this->db->where('status', 1);
+			$this->db->where('id', $id);
+			$this->db->order_by('desc', 'asc');
+			$query = $this->db->get('kamera')->row();
+		} else {
+			$this->db->where('status', 1);
+			$this->db->where('id', $id);
+			$this->db->order_by('desc', 'asc');
+			$query = $this->db->get('kendaraan')->row();
+		}
+		return $query;
+	}
 }
 ?>
